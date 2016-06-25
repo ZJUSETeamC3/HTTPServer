@@ -10,8 +10,9 @@ import java.io.IOException;
 public class Server2 {
     public static void main(String[] args){
         try {
+            //第二个服务器，对“POST”、“/”响应
             Server serv = new Server(81);
-            serv.setRouter("/redirect", "index2.html");
+            serv.setRouter("/", "index2.html", "POST");
             serv.listen();
         }
         catch (IOException e){
