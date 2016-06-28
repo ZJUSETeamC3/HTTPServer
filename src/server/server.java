@@ -230,7 +230,11 @@ class Handle implements Runnable{
 
                     }
                     else{
+                        System.out.println();
+                        System.out.println("Signature:"+signature);
+                        System.out.println("Verify OK");
                         bw.write(new String(result));
+                        response_code=Integer.valueOf((new String(result)).split("\n")[0].split(" ")[1]);
                     }
                     bw.flush();
                     br2.close();
